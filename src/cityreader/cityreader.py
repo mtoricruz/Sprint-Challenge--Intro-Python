@@ -28,7 +28,7 @@ def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-    with open('cities.csv') as csvfile:
+    with open('cities.csv', 'r') as csvfile:
       readCSV = csv.reader(csvfile, delimiter=',')
       # found next method skips header row and works over using pop() even though cities is a list
       next(readCSV)
@@ -36,9 +36,9 @@ def cityreader(cities=[]):
         name = row[0]
         lat = row[3]
         lon = row[4]
-        cities.append(City(name, lat, lon))
+        cities.append(City(name, float(lat), float(lon)))
     return cities
-
+# float() used for decimal integers
 cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
