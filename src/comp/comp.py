@@ -20,17 +20,16 @@ humans = [
     Human("Igon", 41),
     Human("David", 31),
 ]
-
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = []
+a = [i for i in humans if i.name.startswith('D')]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = []
+b = [i for i in humans if i.name.endswith('e')]
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
