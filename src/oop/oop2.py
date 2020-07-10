@@ -20,7 +20,13 @@ class GroundVehicle():
 
 # TODO
 class Motorcycle(GroundVehicle):
-    def __init__(self, num_wheels))
+    def __init__(self, *num_wheels):
+        # GroundVehicle.__init__(self, num_wheels) # I originally had this line based off a stack overflow response. Although I believed it to be redundant 
+        # So i ran the file/test without line 24 and it still passed.
+        self.num_wheels = 2
+
+    def drive(self):
+        return 'BRAAAP!!'
 
 vehicles = [
     GroundVehicle(),
@@ -33,3 +39,5 @@ vehicles = [
 # Go through the vehicles list and print the result of calling drive() on each.
 
 # TODO
+for i in vehicles:
+    i.drive()
