@@ -4,11 +4,12 @@
 # object is constructed.
 
 class GroundVehicle():
-    def __init__(self, num_wheels):
+    def __init__(self, num_wheels=4):
         self.num_wheels = num_wheels
 
     # TODO
-
+    def drive(self):
+        return "vroooom"
 
 # Subclass Motorcycle from GroundVehicle.
 #
@@ -18,6 +19,15 @@ class GroundVehicle():
 # Override the drive() method in Motorcycle so that it returns "BRAAAP!!"
 
 # TODO
+class Motorcycle(GroundVehicle):
+    def __init__(self, num_wheels=2):
+        # GroundVehicle.__init__(self, num_wheels) # I originally had this line based off a stack overflow response. Although I believed it to be redundant 
+        # So i ran the file/test without line 24 and it still passed.
+        super().__init__(num_wheels)
+        # self.num_wheels = num_wheels
+
+    def drive(self):
+        return 'BRAAAP!!'
 
 vehicles = [
     GroundVehicle(),
@@ -30,3 +40,5 @@ vehicles = [
 # Go through the vehicles list and print the result of calling drive() on each.
 
 # TODO
+for i in vehicles:
+    i.drive()
